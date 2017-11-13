@@ -1,0 +1,1 @@
+include "form-rest-api", "form-rest-core", "form-rest-ear", "form-rest-war", "form-rest-ejb", "form-rest-ejb-client"

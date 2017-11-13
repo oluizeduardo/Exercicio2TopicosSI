@@ -1,0 +1,23 @@
+apply plugin: 'ear'
+
+dependencies {
+	deploy project(path: ':form-rest-war', configuration: 'archives')
+	deploy project(path: ':form-rest-ejb')
+	earlib project(':form-rest-core')
+	earlib project(':form-rest-api')
+	earlib project(':form-rest-ejb-client')
+}
+
+ear {
+	deploymentDescriptor {
+		def warName = project(':form-rest-war').name
+		def warVersion = project(':form-rest-war').version
+		def warFileName = warName + '-' + warVersion + '.war'
+		webModule(warFileName, 'form')
+
+		def ejbName = project(':form-rest-ejb').name
+		def ejbVersion = project(':form-rest-ejb').version
+		def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+		module(ejbFileName, 'ejb')
+	}
+}
