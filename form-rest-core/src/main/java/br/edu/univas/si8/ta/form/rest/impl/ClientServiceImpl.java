@@ -9,7 +9,7 @@ import br.edu.univas.si8.ta.form.rest.api.ClientService;
 @RequestScoped
 public class ClientServiceImpl implements ClientService {
 
-	@EJB(mappedName = "java:app/form-rest-ejb-0.1-SNAPSHOT/InventoryBean!br.edu.univas.si8.ta.form.ejb.interfaces.ClientRemote")
+	@EJB(mappedName = "java:app/form-rest-ejb-0.1-SNAPSHOT/ClientBean!br.edu.univas.si8.ta.form.ejb.interfaces.ClientRemote")
 	private Client client;
 
 	@Override
